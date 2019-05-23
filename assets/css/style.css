@@ -1,4 +1,21 @@
 body {
-    background-image: url(https://static1.fjcdn.com/comments/Just+cause+im+a+nice+guy+heres+a+hd+computer+_430b232750ca7477085a2d08d57f67bc.png);
-    opacity: 0.75;
+    background-image: url(https://syamsulisme.files.wordpress.com/2015/06/thinking.jpg);
+    background-blend-mode: color;
+    background-size: 110%;
+    background-repeat: no-repeat;
+}
+
+div {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 28px;
+    color:firebrick;
+    font-weight:bolder;
+    background-color:#ffffff;
+    opacity: .8;
+    width:50%;
+}
+
+h1 {
+    font-size:40px;
+    color:purple;
 }
