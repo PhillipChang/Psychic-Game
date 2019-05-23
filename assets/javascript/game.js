@@ -20,14 +20,21 @@ var computerGuess = aiOptions[Math.floor(Math.random() * aiOptions.length)];
    if (guesses === 0) {
     alert("Game Over");
    }
-   
+
    else {
        losses++;
        guesses--;
        document.querySelector("#losses").innerHTML = losses;
        document.querySelector("#guesses").innerHTML = guesses;
    }
-
-
-
  }
+
+ document.querySelector("#reset").addEventListener("click", reset);
+
+ function reset() {
+     guesses=9;
+     wins=0;
+     losses=0;
+     userGuess=[];
+    }
+ 
