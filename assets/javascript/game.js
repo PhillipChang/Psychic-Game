@@ -7,18 +7,27 @@ var aiOptions = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p'
 var computerGuess = aiOptions[Math.floor(Math.random() * aiOptions.length)];
 
  document.onkeyup = function(event) {
-   var userGuess = event.key;
+   var userType = event.key;
+   userGuess.push(userType);
    document.querySelector("#userGuess").innerHTML = userGuess; 
 
+   
    if (userGuess === aiOptions) {
        wins++;
        document.querySelector("#wins").innerHTML = wins;
    }
+   
+   if (guesses === 0) {
+    alert("Game Over");
+   }
+   
    else {
-       losses--;
+       losses++;
        guesses--;
        document.querySelector("#losses").innerHTML = losses;
        document.querySelector("#guesses").innerHTML = guesses;
    }
+
+
 
  }
