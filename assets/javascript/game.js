@@ -4,37 +4,38 @@ var guesses = 9;
 var userGuess = [];
 var aiOptions = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
 
-var computerGuess = aiOptions[Math.floor(Math.random() * aiOptions.length)];
-
- document.onkeyup = function(event) {
-   var userType = event.key;
+ document.onkeypress = function(event) {
+    var computerGuess = aiOptions[Math.floor(Math.random() * aiOptions.length)];
+    var userType = event.key.toLowerCase();
    userGuess.push(userType);
    document.querySelector("#userGuess").innerHTML = userGuess; 
 
-   
-   if (userGuess === aiOptions) {
+   if (userType == computerGuess) {
        wins++;
+       guesses = 9;
+       userGuess = []; 
        document.querySelector("#wins").innerHTML = wins;
-   }
-   
-   if (guesses === 0) {
-    alert("Game Over");
-   }
-
-   else {
-       losses++;
-       guesses--;
-       document.querySelector("#losses").innerHTML = losses;
        document.querySelector("#guesses").innerHTML = guesses;
+       document.querySelector("#userGuess").innerHTML = userGuess;
    }
- }
-
- document.querySelector("#reset").addEventListener("click", reset);
-
- function reset() {
-     guesses=9;
-     wins=0;
-     losses=0;
-     userGuess=[];
-    }
+   else {
+       guesses--;
+       document.querySelector("#guesses").innerHTML = guesses;
+       if (guesses === 0) {
+           losses++;
+           guesses = 9;
+           userGuess = [];
+           document.querySelector("#losses").innerHTML = losses;
+           document.querySelector("#guesses").innerHTML = guesses;
+           document.querySelector("#userGuess").innerHTML = userGuess;
+       }
+   }
+//     if (guesses === 0) {
+//        losses++;
+//        userGuess = [];
+//        guesses =9;
+//        document.querySelector("#losses").innerHTML = losses;
+//        document.querySelector("#guesses").innerHTML = guesses;
+//    }
  
+}
