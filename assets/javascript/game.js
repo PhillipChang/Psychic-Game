@@ -29,13 +29,5 @@ var aiOptions = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p'
            document.querySelector("#guesses").innerHTML = guesses;
            document.querySelector("#userGuess").innerHTML = userGuess;
        }
-   }
-//     if (guesses === 0) {
-//        losses++;
-//        userGuess = [];
-//        guesses =9;
-//        document.querySelector("#losses").innerHTML = losses;
-//        document.querySelector("#guesses").innerHTML = guesses;
-//    }
- 
+   } 
 }
